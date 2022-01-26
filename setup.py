@@ -31,14 +31,14 @@ with open(os.path.join(repo_root, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
 
-ns = pyload(os.path.join(repo_root,  "dpmmpython", "release.py"))
+ns = pyload(os.path.join(repo_root,  "dpmmpythonStreaming", "release.py"))
 version = ns["__version__"]
 
 
 
-setup(name='dpmmpython',
+setup(name='dpmmpythonStreaming',
       version=version,
-      description="Python wrapper for DPMMSubClusters julia package",
+      description="Python wrapper for DPMMSubClustersStreaming julia package",
       long_description=long_description,
       long_description_content_type="text/markdown",
       author='Or Dinari',
@@ -67,9 +67,9 @@ setup(name='dpmmpython',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
       ],
-      url='https://github.com/BGU-CS-VIL/DPMMPython',
+      url='https://github.com/BGU-CS-VIL/DPMMPythonStreaming',
       project_urls={
-          "Source": "https://github.com/BGU-CS-VIL/DPMMPython",
+          "Source": "https://github.com/BGU-CS-VIL/DPMMPythonStreaming",
           "Tracker": "https://github.com/BGU-CS-VIL/issues",
           "Documentation": "https://bgu-cs-vil.github.io/DPMMSubClusters.jl/latest/",
       },

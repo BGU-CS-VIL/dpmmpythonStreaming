@@ -3,9 +3,9 @@
 <img src="https://www.cs.bgu.ac.il/~dinari/images/clusters_low_slow.gif" alt="DPGMM SubClusters 2d example">
 </p>
 
-## DPMMSubClusters
+## DPMMSubClustersStreaming
 
-This package is a Python wrapper for the [DPMMSubClusters.jl](https://github.com/BGU-CS-VIL/DPMMSubClusters.jl) Julia package.<br>
+This package is a Python wrapper for the [DPMMSubClustersStreaming.jl](https://github.com/BGU-CS-VIL/DPMMSubClustersStreaming.jl) Julia package.<br>
 
 ### Motivation
 
@@ -27,7 +27,7 @@ Working on a subset of 100K images from ImageNet, containing 79 classes, we have
 pip install dpmmpython
 ```
 
-If you already have Julia installed, install [PyJulia](https://github.com/JuliaPy/pyjulia) and add the package `DPMMSubClusters` to your julia installation. <p>
+If you already have Julia installed, install [PyJulia](https://github.com/JuliaPy/pyjulia) and add the package `DPMMSubClustersStreaming` to your julia installation. <p>
 <p>
 Make sure Julia path is configured correctly, e.g. you should be able to run julia by typing `julia` from the terminal, unless configured properly, PyJulia wont work.
 

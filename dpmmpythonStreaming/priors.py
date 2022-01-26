@@ -1,5 +1,5 @@
 import julia
-from julia import DPMMSubClusters
+from julia import DPMMSubClustersStreaming
 import numpy as np
 
 class prior:
@@ -17,7 +17,7 @@ class niw(prior):
         
 
     def to_julia_prior(self):
-        return DPMMSubClusters.niw_hyperparams(self.kappa,self.mu,self.nu, self.psi)
+        return DPMMSubClustersStreaming.niw_hyperparams(self.kappa,self.mu,self.nu, self.psi)
 
 
 class multinomial(prior):
@@ -30,4 +30,4 @@ class multinomial(prior):
         
 
     def to_julia_prior(self):
-        return DPMMSubClusters.multinomial_hyper(self.alpha)
+        return DPMMSubClustersStreaming.multinomial_hyper(self.alpha)

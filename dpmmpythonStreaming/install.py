@@ -41,9 +41,9 @@ def install(julia_download_path = 'https://julialang-s3.julialang.org/bin/linux/
     print("Configuring PyJulia")    
     julia.install()
     julia.Julia(compiled_modules=False)
-    print("Adding DPMMSubClusters package")  
+    print("Adding DPMMSubClustersStreaming package")  
     from julia import Pkg
-    Pkg.add("DPMMSubClusters")
+    Pkg.add("DPMMSubClustersStreaming")
     print("Please exit the shell and restart, before attempting to use the package") 
 
 
