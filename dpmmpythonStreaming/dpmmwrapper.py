@@ -81,6 +81,12 @@ class DPMMPython:
         data = data[0]
         return data,gt
 
+    @staticmethod
+    def add_procs(procs_count):
+        j = julia.Julia(compiled_modules=False)
+        j.eval('using Distributed')
+        j.eval('addprocs(' + str(procs_count) + ')')
+        j.eval('@everywhere using DPMMSubClusters')
 
 
 if __name__ == "__main__":
