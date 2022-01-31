@@ -31,3 +31,15 @@ class multinomial(prior):
 
     def to_julia_prior(self):
         return DPMMSubClustersStreaming.multinomial_hyper(self.alpha)
+
+class compact_multinomial(prior):
+    def __init__(self, alpha):
+        if isinstance(alpha,np.ndarray):
+            self.alpha = alpha
+        else:
+            self.alpha = np.ones(dim)*alpha       
+        
+
+    def to_julia_prior(self):
+        return DPMMSubClustersStreaming.compact_mnm_hyper(self.alpha)
+
