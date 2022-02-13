@@ -2,6 +2,11 @@
 
 This package is a Python wrapper for the [DPMMSubClustersStreaming.jl](https://github.com/BGU-CS-VIL/DPMMSubClustersStreaming.jl) Julia package.<br>
 
+<br>
+<p align="center">
+<img src="appended.gif" alt="Streaming DPGMM">
+</p>
+
 
 ### Installation
 
