@@ -10,24 +10,21 @@ This package is a Python wrapper for the [DPMMSubClustersStreaming.jl](https://g
 
 ### Installation
 
+1. Install Julia from: https://julialang.org/downloads/platform
+2. Add our DPMMSubClusterStreaming package from within a Julia terminal via Julia package manager:
 ```
-pip install dpmmpythonStreaming
+] add DPMMSubClustersStreaming
 ```
-
-If you already have Julia installed, install [PyJulia](https://github.com/JuliaPy/pyjulia) and add the package `DPMMSubClustersStreaming` to your julia installation. <p>
-<p>
-Make sure Julia path is configured correctly, e.g. you should be able to run julia by typing `julia` from the terminal, unless configured properly, PyJulia wont work.
-
-
-**Installation Shortcut for Ubuntu distributions** <br>
-If you do not have Julia installed, or wish to create a clean installation for the purpose of using this package. after installing (with pip), do the following:
-
+3. Add our dpmmpythonStreaming package in python: pip install dpmmpythonStreaming
+4. Add Environment Variables:
+	#### On Linux:
+	1. Add to the "PATH" environment variable the path to the Julia executable (e.g., in .bashrc add: export PATH =$PATH:$HOME/julia/julia-1.6.0/bin).
+	#### On Windows:
+	1. Add to the "PATH" environment variable the path to the Julia executable (e.g., C:\Users\<USER>\AppData\Local\Programs\Julia\Julia-1.6.0\bin).
+5. Install PyJulia from within a Python terminal:
 ```
-import dpmmpythonStreaming
-dpmmpythonStreaming.install()
+	import julia;julia.install();
 ```
-Optional arguments are `install(julia_download_path = 'https://julialang-s3.julialang.org/bin/linux/x64/1.4/julia-1.4.0-linux-x86_64.tar.gz', julia_target_path = None)`, where the former specify the julia download file, and the latter the installation path, if the installation path is not specified, `$HOME$/julia` will be used.<br>
-As the `install()` command edit your `.bashrc` path, before using the pacakge, the terminal should either be reset, or modify the current environment according to the julia path you specified (`$HOME$/julia/julia-1.4.0/bin` by default).
 
 ### Usage Example:
 
@@ -35,8 +32,8 @@ As the `install()` command edit your `.bashrc` path, before using the pacakge, t
 from dpmmpythonStreaming.dpmmwrapper import DPMMPython
 from dpmmpythonStreaming.priors import niw
 import numpy as np
-
-j = julia.Julia(compiled_modules=False)
+from julia.api import Julia
+jl = Julia(compiled_modules=False)
 data,gt = DPMMPython.generate_gaussian_data(10000, 2, 10, 100.0)
 batch1 = data[0:5000]
 batch2 = data[5000:]
