@@ -1,6 +1,7 @@
 ## DPMMSubClustersStreaming
 
 This package is a Python wrapper for the [DPMMSubClustersStreaming.jl](https://github.com/BGU-CS-VIL/DPMMSubClustersStreaming.jl) Julia package.<br>
+(for our paper [Sampling in Dirichlet Process Mixture Models for Clustering Streaming Data](https://dinarior.github.io/papers/Dinari_AISTATS_streaming.pdf), AISTATS 2022.).
 
 <br>
 <p align="center">
