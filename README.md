@@ -30,11 +30,11 @@ This package is a Python wrapper for the [DPMMSubClustersStreaming.jl](https://g
 ### Usage Example:
 
 ```
+from julia.api import Julia
+jl = Julia(compiled_modules=False)
 from dpmmpythonStreaming.dpmmwrapper import DPMMPython
 from dpmmpythonStreaming.priors import niw
 import numpy as np
-from julia.api import Julia
-jl = Julia(compiled_modules=False)
 data,gt = DPMMPython.generate_gaussian_data(10000, 2, 10, 100.0)
 batch1 = data[:,0:5000]
 batch2 = data[:,5000:]
