@@ -39,7 +39,7 @@ class DPMMPython:
     @staticmethod
     def fit_init(data,alpha, prior,
             iterations= 100,init_clusters=1, verbose = False,
-            burnout = 15, gt = None, epsilon = 0.1):
+            burnout = 15, gt = None, epsilon = 0.1, smart_splits = False):
         """
         Wrapper for DPMMSubClustersStreaming fit, reffer to "https://bgu-cs-vil.github.io/DPMMSubClustersStreaming.jl/stable/usage/" for specification
         Note that directly working with the returned clusters can be problematic software displaying the workspace (such as PyCharm debugger).
@@ -48,7 +48,7 @@ class DPMMPython:
 
         results = DPMMSubClustersStreaming.dp_parallel_streaming(data, prior.to_julia_prior(), alpha, iterations,init_clusters,
                                         None, verbose, False,
-                                        burnout,gt, epsilon)
+                                        burnout,gt, epsilon, smart_splits)
         return results
 
     @staticmethod
