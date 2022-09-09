@@ -39,26 +39,29 @@ class DPMMPython:
     @staticmethod
     def fit_init(data,alpha, prior,
             iterations= 100,init_clusters=1, verbose = False,
-            burnout = 15, gt = None, epsilon = 0.1, smart_splits = False, warm_start = None):
+            burnout = 15, gt = None, epsilon = 0.1, smart_splits = False, warm_start = None, allow_splits = True, allow_merges = True):
         """
         Wrapper for DPMMSubClustersStreaming fit, reffer to "https://bgu-cs-vil.github.io/DPMMSubClustersStreaming.jl/stable/usage/" for specification
         Note that directly working with the returned clusters can be problematic software displaying the workspace (such as PyCharm debugger).
         :return: labels, clusters, sublabels
         """
 
-        results = DPMMSubClustersStreaming.dp_parallel_streaming(data, prior.to_julia_prior(), alpha, iterations,init_clusters,
+        results,split_history = DPMMSubClustersStreaming.dp_parallel_streaming(data, prior.to_julia_prior(), alpha, iterations,init_clusters,
                                         None, verbose, False,
                                         burnout,gt, epsilon, smart_splits, warm_start)
-        return results
+        return results,split_history
 
     @staticmethod
     def fit_partial(model,iterations, t, data):
-        DPMMSubClustersStreaming.run_model_streaming(model,iterations, t, data)
-        return model
+        results,split_history = DPMMSubClustersStreaming.run_model_streaming(model,iterations, t, data)
+        return model, split_history
 
     @staticmethod
     def get_labels(model):
         return DPMMSubClustersStreaming.get_labels(model)
+
+    def get_sublabels(model):
+        return DPMMSubClustersStreaming.get_sublabels(model)
 
     @staticmethod
     def predict(model,data):
