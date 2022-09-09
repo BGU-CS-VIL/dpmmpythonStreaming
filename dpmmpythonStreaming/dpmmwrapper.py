@@ -48,7 +48,7 @@ class DPMMPython:
 
         results,split_history = DPMMSubClustersStreaming.dp_parallel_streaming(data, prior.to_julia_prior(), alpha, iterations,init_clusters,
                                         None, verbose, False,
-                                        burnout,gt, epsilon, smart_splits, warm_start)
+                                        burnout,gt, epsilon, smart_splits, warm_start,allow_splits,allow_merges)
         return results,split_history
 
     @staticmethod
